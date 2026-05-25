@@ -1359,13 +1359,8 @@ function msubmit() {
   for (let i = 1; i <= 4; i++) { const d = document.getElementById('msd'+i); d.classList.remove('active'); d.classList.add('done'); }
 }
 
-/* Show modal after 2.5s delay — skip if returning visitor */
-if (!sessionStorage.getItem('pd_modal_shown')) {
-  setTimeout(() => {
-    openModal();
-    sessionStorage.setItem('pd_modal_shown', '1');
-  }, 2500);
-}
+/* Show modal on every page load after short delay */
+setTimeout(openModal, 2500);
 </script>
 </body>
 </html>
