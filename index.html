@@ -429,6 +429,34 @@ img{max-width:100%;display:block}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+/* ============================================================ ENTRY MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);opacity:0;transition:opacity .4s ease;pointer-events:none}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:#fff;border-radius:var(--r-lg);width:100%;max-width:520px;overflow:hidden;transform:translateY(24px) scale(.97);transition:transform .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 32px 80px rgba(0,0,0,.45);position:relative}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:none;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:background .2s;z-index:10}
+.modal-close:hover{background:rgba(255,255,255,.32)}
+.modal-close svg{width:16px;height:16px}
+.modal-hero{background:linear-gradient(135deg,var(--blue-deeper) 0%,var(--blue) 100%);padding:32px 32px 28px;text-align:center;position:relative;overflow:hidden}
+.modal-hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='28' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3C/svg%3E");background-size:60px 60px}
+.modal-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:5px 13px;font-size:.68rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+.modal-badge svg{width:11px;height:11px;flex-shrink:0}
+.modal-hero h2{font-family:var(--font-d);font-size:1.55rem;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.025em;margin-bottom:10px;position:relative}
+.modal-hero p{font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.6;position:relative;max-width:340px;margin:0 auto}
+.modal-trust{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:20px;position:relative;flex-wrap:wrap}
+.modal-trust-item{display:flex;align-items:center;gap:5px;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.8)}
+.modal-trust-item svg{width:12px;height:12px;color:rgba(255,255,255,.7);flex-shrink:0}
+.modal-body{padding:28px 30px 30px}
+.modal-body .form-step{display:none;animation:sIn .3s ease}
+.modal-body .form-step.active{display:block}
+.modal-step-n{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.modal-step-q{font-family:var(--font-d);font-size:1rem;font-weight:800;color:var(--text);margin-bottom:16px;line-height:1.3;letter-spacing:-.01em}
+.modal-track{display:flex;align-items:center;gap:6px;margin-bottom:22px}
+.modal-track-dot{width:8px;height:8px;border-radius:50%;background:var(--surface-3);transition:all .3s ease;flex-shrink:0}
+.modal-track-dot.active{background:var(--blue);width:22px;border-radius:4px}
+.modal-track-dot.done{background:var(--blue);opacity:.45}
+.modal-footer-note{text-align:center;margin-top:12px;font-size:.68rem;color:var(--text-3)}
+
 /* Sticky mobile CTA */
 @media(max-width:640px){
   .mobile-sticky-cta{
@@ -452,6 +480,118 @@ img{max-width:100%;display:block}
 </style>
 </head>
 <body>
+
+<!-- ENTRY MODAL -->
+<div class="modal-overlay" id="entryModal" role="dialog" aria-modal="true" aria-labelledby="modal-h2">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-hero">
+      <div class="modal-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Free, No-Obligation Survey
+      </div>
+      <h2 id="modal-h2">Get Your Free Driveway Quote in 60 Seconds</h2>
+      <p>Join 500+ homeowners across England who've transformed their property with PD Groundworks &amp; Resin.</p>
+      <div class="modal-trust">
+        <span class="modal-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>25 Years Experience</span>
+        <span class="modal-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>0% Finance</span>
+        <span class="modal-trust-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Fully Insured</span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-track" aria-hidden="true">
+        <div class="modal-track-dot active" id="msd1"></div>
+        <div class="modal-track-dot" id="msd2"></div>
+        <div class="modal-track-dot" id="msd3"></div>
+        <div class="modal-track-dot" id="msd4"></div>
+      </div>
+      <!-- Modal Step 1 -->
+      <div class="form-step active" id="ms1">
+        <p class="modal-step-n">Step 1 of 4</p>
+        <p class="modal-step-q">What type of project?</p>
+        <div class="tiles t3">
+          <button class="tile" onclick="mpick(this,'mproject','Driveway');mgo(2)" aria-label="Driveway">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+            <span class="tile-lbl">Driveway</span>
+          </button>
+          <button class="tile" onclick="mpick(this,'mproject','Patio');mgo(2)" aria-label="Patio">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+            <span class="tile-lbl">Patio</span>
+          </button>
+          <button class="tile" onclick="mpick(this,'mproject','Pathway');mgo(2)" aria-label="Pathway">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></span>
+            <span class="tile-lbl">Pathway</span>
+          </button>
+        </div>
+      </div>
+      <!-- Modal Step 2 -->
+      <div class="form-step" id="ms2">
+        <p class="modal-step-n">Step 2 of 4</p>
+        <p class="modal-step-q">Preferred surface material?</p>
+        <div class="tiles t4">
+          <button class="tile" onclick="mpick(this,'mmaterial','Resin Bound');mgo(3)" aria-label="Resin Bound">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272z"/></svg></span>
+            <span class="tile-lbl">Resin Bound</span>
+          </button>
+          <button class="tile" onclick="mpick(this,'mmaterial','Block Paving');mgo(3)" aria-label="Block Paving">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="4" rx="0.5"/><rect x="2" y="10" width="8" height="4" rx="0.5"/><rect x="12" y="10" width="10" height="4" rx="0.5"/><rect x="2" y="17" width="10" height="4" rx="0.5"/><rect x="14" y="17" width="8" height="4" rx="0.5"/></svg></span>
+            <span class="tile-lbl">Block Paving</span>
+          </button>
+          <button class="tile" onclick="mpick(this,'mmaterial','Tarmac');mgo(3)" aria-label="Tarmac">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <span class="tile-lbl">Tarmac</span>
+          </button>
+          <button class="tile" onclick="mpick(this,'mmaterial','Natural Stone');mgo(3)" aria-label="Natural Stone">
+            <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L8.5 9l4 5.5 2.5-3.5 6 9H3z"/></svg></span>
+            <span class="tile-lbl">Natural Stone</span>
+          </button>
+        </div>
+      </div>
+      <!-- Modal Step 3 -->
+      <div class="form-step" id="ms3">
+        <p class="modal-step-n">Step 3 of 4</p>
+        <p class="modal-step-q">Where is your property?</p>
+        <div class="fld">
+          <label for="mf-addr">Postcode or Address</label>
+          <input type="text" id="mf-addr" placeholder="e.g. LS1 1AA or 12 High Street, Leeds" autocomplete="street-address">
+          <span class="errmsg" id="me-addr">Please enter your postcode or address.</span>
+        </div>
+        <button class="form-btn" onclick="mvalStep3()">Continue →</button>
+      </div>
+      <!-- Modal Step 4 -->
+      <div class="form-step" id="ms4">
+        <p class="modal-step-n">Step 4 of 4</p>
+        <p class="modal-step-q">How should we reach you?</p>
+        <div class="fld">
+          <label for="mf-name">First Name</label>
+          <input type="text" id="mf-name" placeholder="Your first name" autocomplete="given-name">
+          <span class="errmsg" id="me-name">Please enter your first name.</span>
+        </div>
+        <div class="fld">
+          <label for="mf-phone">Phone Number</label>
+          <input type="tel" id="mf-phone" placeholder="e.g. 07700 900 000" autocomplete="tel">
+          <span class="errmsg" id="me-phone">Please enter a valid UK phone number.</span>
+        </div>
+        <div class="fld">
+          <label for="mf-email">Email Address</label>
+          <input type="email" id="mf-email" placeholder="your@email.com" autocomplete="email">
+          <span class="errmsg" id="me-email">Please enter a valid email address.</span>
+        </div>
+        <button class="form-btn" onclick="msubmit()">Request My Free Survey →</button>
+        <p class="consent">By submitting you consent to contact from PD Groundworks &amp; Resin Ltd. We never share your details.</p>
+      </div>
+      <!-- Modal Success -->
+      <div class="form-ok" id="mOk" role="alert" aria-live="polite">
+        <div class="ok-circle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Survey Requested!</h3>
+        <p>A member of our team will contact you within <strong>2 hours</strong> to arrange your free, no-obligation site survey.</p>
+      </div>
+      <p class="modal-footer-note">No obligation · No pressure · We respond within 2 hours</p>
+    </div>
+  </div>
+</div>
 
 <!-- TOP BAR -->
 <div class="topbar" role="complementary">
@@ -1138,6 +1278,79 @@ function faqToggle(el) {
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); faqToggle(q); } });
 });
+
+/* ============================================================ ENTRY MODAL */
+const mfd = {mproject:'',mmaterial:'',maddress:'',mname:'',mphone:'',memail:''};
+let mcur = 1;
+
+function openModal() {
+  document.getElementById('entryModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('entryModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('entryModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+function mgo(step) {
+  document.getElementById('ms'+mcur).classList.remove('active');
+  mcur = step;
+  document.getElementById('ms'+step).classList.add('active');
+  for (let i = 1; i <= 4; i++) {
+    const d = document.getElementById('msd'+i);
+    d.classList.remove('active','done');
+    if (i < step) d.classList.add('done');
+    if (i === step) d.classList.add('active');
+  }
+}
+function mpick(el, field, val) {
+  mfd[field] = val;
+  el.closest('.tiles').querySelectorAll('.tile').forEach(t => t.classList.remove('sel'));
+  el.classList.add('sel');
+}
+function mvalStep3() {
+  const v = document.getElementById('mf-addr').value.trim();
+  const errEl = document.getElementById('me-addr');
+  const inp = document.getElementById('mf-addr');
+  if (!v) { inp.classList.add('err'); errEl.classList.add('show'); return; }
+  inp.classList.remove('err'); errEl.classList.remove('show');
+  mfd.maddress = v;
+  mgo(4);
+}
+function msubmit() {
+  let ok = true;
+  const checks = [
+    ['mf-name',  v => v.length > 0,                         'me-name'],
+    ['mf-phone', v => /^[\d\s\+\-\(\)]{10,}$/.test(v),     'me-phone'],
+    ['mf-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),'me-email'],
+  ];
+  checks.forEach(([id, test, errId]) => {
+    const el = document.getElementById(id);
+    const v = el.value.trim();
+    const err = document.getElementById(errId);
+    if (!test(v)) { el.classList.add('err'); err.classList.add('show'); ok = false; }
+    else { el.classList.remove('err'); err.classList.remove('show'); }
+  });
+  if (!ok) return;
+  document.getElementById('ms4').style.display = 'none';
+  document.getElementById('mOk').classList.add('show');
+  document.querySelector('.modal-footer-note').style.display = 'none';
+  for (let i = 1; i <= 4; i++) { const d = document.getElementById('msd'+i); d.classList.remove('active'); d.classList.add('done'); }
+}
+
+/* Show modal after 2.5s delay — skip if returning visitor */
+if (!sessionStorage.getItem('pd_modal_shown')) {
+  setTimeout(() => {
+    openModal();
+    sessionStorage.setItem('pd_modal_shown', '1');
+  }, 2500);
+}
 </script>
 </body>
 </html>
