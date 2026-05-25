@@ -8,14 +8,14 @@
 <meta property="og:title" content="Resin Bound Driveways &amp; Expert Paving | PD Groundworks &amp; Resin Ltd">
 <meta property="og:description" content="England's premier resin bound and paving specialists. 25+ years, 1,200+ projects, 0% finance. Request a free survey.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://offers.pdgroundworks.info/">
+<meta property="og:url" content="https://pd-groundworks.vercel.app">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://offers.pdgroundworks.info/">
+<link rel="canonical" href="https://pd-groundworks.vercel.app">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"PD Groundworks & Resin Ltd","description":"England's premier resin bound driveway and paving specialists. Serving homeowners across England for over 25 years.","url":"https://offers.pdgroundworks.info/","telephone":"08001931101","email":"info@pdgr.co.uk","address":{"@type":"PostalAddress","streetAddress":"The Chambers, Halifax Road, Hipperholme","addressLocality":"Halifax","addressRegion":"West Yorkshire","postalCode":"HX3 8EN","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"England"},"foundingDate":"2001","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Paving & Groundworks Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Resin Bound Driveways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Block Paving"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tarmac Driveways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Patios & Pathways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks & Landscaping"}}]}}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"PD Groundworks & Resin Ltd","description":"England's premier resin bound driveway and paving specialists. Serving homeowners across England for over 25 years.","url":"https://pd-groundworks.vercel.app","telephone":"08001931101","email":"info@pdgr.co.uk","address":{"@type":"PostalAddress","streetAddress":"The Chambers, Halifax Road, Hipperholme","addressLocality":"Halifax","addressRegion":"West Yorkshire","postalCode":"HX3 8EN","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"England"},"foundingDate":"2001","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Paving & Groundworks Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Resin Bound Driveways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Block Paving"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tarmac Driveways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Patios & Pathways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks & Landscaping"}}]}}
 </script>
 <style>
 /* ============================================================ VARIABLES */
@@ -76,6 +76,7 @@ img{max-width:100%;display:block}
 .topbar-stars{color:#f59e0b;font-size:.68rem;letter-spacing:1px}
 .topbar-sep{width:1px;height:11px;background:rgba(255,255,255,.12);flex-shrink:0}
 .topbar-right{font-size:.7rem;color:rgba(255,255,255,.35);white-space:nowrap}
+.topbar-ico{width:11px;height:11px;flex-shrink:0;opacity:.65}
 
 /* ============================================================ HEADER */
 .header{position:sticky;top:0;z-index:1000;background:var(--ink-1);border-bottom:1px solid rgba(255,255,255,.06);padding:13px 0;transition:padding .3s ease,box-shadow .3s ease}
@@ -109,7 +110,8 @@ img{max-width:100%;display:block}
 
 .hero-trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:34px}
 .hero-trust-item{display:flex;align-items:center;gap:9px;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.78)}
-.hero-trust-ico{width:28px;height:28px;background:rgba(20,144,212,.14);border:1px solid rgba(20,144,212,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.72rem;font-weight:800;flex-shrink:0}
+.hero-trust-ico{width:28px;height:28px;background:rgba(20,144,212,.14);border:1px solid rgba(20,144,212,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
+.hero-trust-ico svg{width:14px;height:14px}
 
 .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hero-sub-link{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px;transition:color .2s;cursor:pointer}
@@ -141,7 +143,8 @@ img{max-width:100%;display:block}
 .tile{border:1.5px solid #e0e0e0;border-radius:var(--r-sm);padding:13px 8px;text-align:center;cursor:pointer;background:#fff;transition:all .2s var(--ease);font-family:var(--font-b)}
 .tile:hover{border-color:var(--blue);background:var(--blue-light);transform:translateY(-2px)}
 .tile.sel{border-color:var(--blue);background:var(--blue-light);box-shadow:0 0 0 3px rgba(20,144,212,.12)}
-.tile-ico{font-size:1.55rem;display:block;margin-bottom:5px;line-height:1}
+.tile-ico{display:flex;align-items:center;justify-content:center;height:34px;margin-bottom:6px}
+.tile-ico svg{width:26px;height:26px;color:var(--blue)}
 .tile-lbl{font-size:.77rem;font-weight:700;color:var(--text)}
 
 .fld{margin-bottom:13px}
@@ -158,7 +161,8 @@ img{max-width:100%;display:block}
 
 .form-ok{display:none;text-align:center;padding:38px 22px}
 .form-ok.show{display:block}
-.ok-circle{width:54px;height:54px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#fff;font-size:1.35rem}
+.ok-circle{width:54px;height:54px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:#fff}
+.ok-circle svg{width:26px;height:26px}
 .form-ok h3{font-family:var(--font-d);font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:7px}
 .form-ok p{font-size:.86rem;color:var(--text-2);line-height:1.6}
 
@@ -180,7 +184,8 @@ img{max-width:100%;display:block}
 .promise-card:hover .p-icon-wrap{background:var(--blue);border-color:var(--blue)}
 .promise-card:hover .p-icon{color:#fff}
 .p-icon-wrap{width:46px;height:46px;background:var(--blue-light);border:1.5px solid rgba(20,144,212,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:all .25s ease}
-.p-icon{font-size:1.25rem;color:var(--blue)}
+.p-icon{color:var(--blue);display:flex;align-items:center;justify-content:center}
+.p-icon svg{width:22px;height:22px}
 .promise-card h3{font-family:var(--font-d);font-size:1rem;font-weight:800;color:var(--text);margin-bottom:9px;letter-spacing:-.01em}
 .promise-card p{font-size:.855rem;color:var(--text-2);line-height:1.72}
 
@@ -217,7 +222,8 @@ img{max-width:100%;display:block}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .why-card{background:#fff;border-radius:var(--r-md);padding:30px;border:1px solid var(--surface-3);display:flex;align-items:flex-start;gap:18px;transition:all .28s var(--ease)}
 .why-card:hover{border-color:rgba(20,144,212,.28);box-shadow:var(--sh-raised);transform:translateY(-3px)}
-.why-ico{width:46px;height:46px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.why-ico{width:46px;height:46px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+.why-ico svg{width:22px;height:22px}
 .why-card h3{font-family:var(--font-d);font-size:.97rem;font-weight:800;color:var(--text);margin-bottom:7px;letter-spacing:-.01em}
 .why-card p{font-size:.855rem;color:var(--text-2);line-height:1.72}
 
@@ -249,7 +255,9 @@ img{max-width:100%;display:block}
 .accred-row{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
 .accred-badge{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-sm);padding:13px 20px;text-align:center;transition:all .22s ease;min-width:120px}
 .accred-badge:hover{background:rgba(255,255,255,.07);border-color:rgba(20,144,212,.3)}
-.accred-ico{font-size:1.15rem;display:block;margin-bottom:5px}
+.accred-ico{display:flex;align-items:center;justify-content:center;height:26px;margin-bottom:5px;color:rgba(255,255,255,.6)}
+.accred-ico svg{width:20px;height:20px}
+.accred-badge:hover .accred-ico{color:var(--blue)}
 .accred-name{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.6);display:block;letter-spacing:.03em}
 .accred-sub{font-size:.62rem;color:rgba(255,255,255,.28);display:block;margin-top:1px}
 
@@ -266,7 +274,8 @@ img{max-width:100%;display:block}
 .faq-item{border-bottom:1px solid var(--surface-3)}
 .faq-q{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:17px 0;cursor:pointer;font-weight:700;font-size:.88rem;color:var(--text);user-select:none;transition:color .2s}
 .faq-item.open .faq-q{color:var(--blue)}
-.faq-ico{width:22px;height:22px;border:1.5px solid var(--surface-3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.74rem;font-weight:700;color:var(--text-3);transition:all .25s var(--ease);margin-top:1px}
+.faq-ico{width:22px;height:22px;border:1.5px solid var(--surface-3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-3);transition:all .25s var(--ease);margin-top:1px}
+.faq-ico svg{width:12px;height:12px}
 .faq-item.open .faq-ico{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}
 .faq-ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .faq-ans-body{padding-bottom:16px;font-size:.865rem;color:var(--text-2);line-height:1.76}
@@ -276,8 +285,10 @@ img{max-width:100%;display:block}
 .areas{padding:var(--pad) 0;background:#fff}
 .areas-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .city-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.city-tag{display:flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--surface-3);border-radius:6px;padding:6px 11px;font-size:.78rem;font-weight:600;color:var(--text-2);transition:all .2s}
+.city-tag{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--surface-3);border-radius:6px;padding:6px 11px;font-size:.78rem;font-weight:600;color:var(--text-2);transition:all .2s}
 .city-tag:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.city-dot{width:5px;height:5px;border-radius:50%;background:var(--blue-dark);flex-shrink:0;transition:background .2s}
+.city-tag:hover .city-dot{background:var(--blue)}
 .map-wrap{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-raised);border:1px solid var(--surface-3);position:relative}
 .map-wrap img{width:100%;display:block}
 .map-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.62),transparent);padding:14px;text-align:center}
@@ -297,15 +308,16 @@ img{max-width:100%;display:block}
 .footer-logo{height:54px;width:auto;background:#fff;padding:6px 12px;border-radius:var(--r-sm);display:block;object-fit:contain;margin-bottom:14px}
 .footer-desc{font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.72;max-width:270px}
 .footer-creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.footer-cred{display:flex;align-items:center;gap:4px;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.32)}
-.footer-cred-ico{color:var(--blue);font-size:.75rem}
+.footer-cred{display:flex;align-items:center;gap:5px;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.32)}
+.footer-cred svg{width:12px;height:12px;color:var(--blue);flex-shrink:0}
 .ft-col-title{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:14px}
 .ft-links{list-style:none}
 .ft-links li{margin-bottom:9px}
 .ft-links a{font-size:.83rem;color:rgba(255,255,255,.48);transition:color .2s;font-weight:500}
 .ft-links a:hover{color:rgba(255,255,255,.88)}
-.ft-contact-item{display:flex;align-items:flex-start;gap:7px;margin-bottom:11px}
-.ft-contact-ico{color:var(--blue);font-size:.88rem;margin-top:1px;flex-shrink:0}
+.ft-contact-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:11px}
+.ft-contact-ico{color:var(--blue);flex-shrink:0;margin-top:2px;display:flex}
+.ft-contact-ico svg{width:14px;height:14px}
 .ft-contact-txt{font-size:.82rem;color:rgba(255,255,255,.48);line-height:1.5}
 .ft-contact-txt strong{color:rgba(255,255,255,.75);display:block;font-weight:700}
 .footer-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
@@ -338,17 +350,14 @@ img{max-width:100%;display:block}
 @media(max-width:640px){
   :root{--pad:60px}
 
-  /* Top bar: hide extras, keep stars + CTA hint */
   .topbar-sep{display:none}
   .topbar-right{display:none}
   .topbar-items{gap:8px;justify-content:center}
 
-  /* Header */
   .header-phone-wrap{display:none}
   .header-logo{height:42px}
   .header .btn{padding:10px 16px;font-size:.78rem}
 
-  /* Hero */
   .hero{min-height:auto;padding:56px 0 60px}
   .hero h1{font-size:clamp(1.75rem,8vw,2.4rem)}
   .hero-sub{font-size:.95rem}
@@ -358,65 +367,54 @@ img{max-width:100%;display:block}
   .hero-actions .btn{width:100%;justify-content:center;padding:16px}
   .hero-sub-link{justify-content:center}
 
-  /* Form */
   .form-card{border-radius:var(--r-md)}
   .form-body{padding:20px 18px}
   .form-head{padding:15px 18px}
   .tile{padding:14px 6px;min-height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .tile-ico{font-size:1.4rem}
+  .tile-ico svg{width:22px;height:22px}
   .tile-lbl{font-size:.72rem}
   .t3{grid-template-columns:repeat(3,1fr);gap:7px}
   .t4{grid-template-columns:repeat(2,1fr);gap:7px}
   .form-btn{padding:15px;font-size:.92rem;min-height:48px}
   .step-dot{width:22px;height:22px;font-size:.62rem}
 
-  /* Stats */
   .stats{padding:40px 0}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .stat::after{display:none}
   .stat{padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.06)}
   .stat-num{font-size:2.2rem}
 
-  /* Process */
   .process-grid{grid-template-columns:1fr;gap:28px}
   .proc-step{display:flex;gap:18px;align-items:flex-start}
   .proc-num{margin-bottom:0;flex-shrink:0}
 
-  /* Why cards */
   .why-card{padding:22px}
-  .why-ico{width:40px;height:40px;font-size:1.1rem}
+  .why-ico{width:40px;height:40px}
+  .why-ico svg{width:20px;height:20px}
 
-  /* Testimonials */
   .testi-card{padding:24px}
 
-  /* Trustpilot row */
   .tp-row{flex-direction:column;gap:10px;text-align:center;padding:16px 20px}
   .tp-divider{display:none}
 
-  /* Accreditations */
   .accred-row{gap:6px}
   .accred-badge{padding:10px 14px;min-width:100px}
 
-  /* FAQ */
   .faq-q{font-size:.85rem}
   .faq-cta-box{padding:22px}
 
-  /* Areas */
   .city-grid{gap:6px}
   .city-tag{font-size:.74rem;padding:5px 10px}
 
-  /* Section headings */
   .h2{font-size:clamp(1.6rem,7vw,2.2rem)}
   .body-text{margin-bottom:36px}
 
-  /* Footer */
   .footer{padding:40px 0 80px}
   .footer-grid{gap:24px}
   .footer-logo{height:46px}
   .footer-bot{flex-direction:column;align-items:flex-start;gap:8px}
   .footer-legal{flex-wrap:wrap;gap:12px}
 
-  /* Final CTA */
   .final-cta{padding:72px 0}
   .final-cta .btn{width:100%;max-width:360px;padding:18px;justify-content:center}
 }
@@ -431,7 +429,7 @@ img{max-width:100%;display:block}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-/* Sticky mobile CTA — shows below fold on small screens */
+/* Sticky mobile CTA */
 @media(max-width:640px){
   .mobile-sticky-cta{
     display:flex;position:fixed;bottom:0;left:0;right:0;z-index:999;
@@ -439,14 +437,14 @@ img{max-width:100%;display:block}
     padding:12px 18px 16px;gap:12px;align-items:center;
     box-shadow:0 -4px 20px rgba(0,0,0,.4);
     transition:opacity .3s ease;
-    /* Safe area for iOS home indicator */
     padding-bottom:calc(12px + env(safe-area-inset-bottom));
   }
   .mobile-sticky-cta a{flex:1;text-align:center;justify-content:center}
   .mobile-sticky-phone{
     font-size:.82rem;font-weight:700;color:rgba(255,255,255,.75);
-    display:flex;align-items:center;gap:5px;white-space:nowrap
+    display:flex;align-items:center;gap:6px;white-space:nowrap
   }
+  .mobile-sticky-phone svg{width:14px;height:14px;flex-shrink:0}
 }
 @media(min-width:641px){
   .mobile-sticky-cta{display:none}
@@ -462,11 +460,20 @@ img{max-width:100%;display:block}
       <div class="topbar-items">
         <div class="topbar-item"><span class="topbar-stars">★★★★★</span> <strong>4.9/5</strong> on Trustpilot</div>
         <div class="topbar-sep" aria-hidden="true"></div>
-        <div class="topbar-item">⭐ <strong>500+</strong> Verified Reviews</div>
+        <div class="topbar-item">
+          <svg class="topbar-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <strong>500+</strong> Verified Reviews
+        </div>
         <div class="topbar-sep" aria-hidden="true"></div>
-        <div class="topbar-item">🏆 Est. <strong>2001</strong> — 25 Years of Excellence</div>
+        <div class="topbar-item">
+          <svg class="topbar-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          Est. <strong>2001</strong> — 25 Years of Excellence
+        </div>
         <div class="topbar-sep" aria-hidden="true"></div>
-        <div class="topbar-item">🔒 Fully Licensed &amp; Insured</div>
+        <div class="topbar-item">
+          <svg class="topbar-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Fully Licensed &amp; Insured
+        </div>
       </div>
       <div class="topbar-right">Serving All of England</div>
     </div>
@@ -507,10 +514,22 @@ img{max-width:100%;display:block}
         <h1 id="hero-h1">The Paving Specialists <span>England Trusts</span></h1>
         <p class="hero-sub">Over 25 years and 1,200+ completed projects — delivering precision driveways, patios and pathways to homeowners across England. Request your free site survey today.</p>
         <div class="hero-trust" role="list" aria-label="Key credentials">
-          <div class="hero-trust-item" role="listitem"><div class="hero-trust-ico" aria-hidden="true">✓</div>25 Years Experience</div>
-          <div class="hero-trust-item" role="listitem"><div class="hero-trust-ico" aria-hidden="true">★</div>500+ 5-Star Reviews</div>
-          <div class="hero-trust-item" role="listitem"><div class="hero-trust-ico" aria-hidden="true">%</div>0% Finance Available</div>
-          <div class="hero-trust-item" role="listitem"><div class="hero-trust-ico" aria-hidden="true">🛡</div>Fully Licensed &amp; Insured</div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            25 Years Experience
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            500+ 5-Star Reviews
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+            0% Finance Available
+          </div>
+          <div class="hero-trust-item" role="listitem">
+            <div class="hero-trust-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+            Fully Licensed &amp; Insured
+          </div>
         </div>
         <div class="hero-actions">
           <a href="#quote" class="btn btn-primary btn-lg">Request Your Free Survey</a>
@@ -539,9 +558,18 @@ img{max-width:100%;display:block}
               <p class="step-n">Step 1 of 4</p>
               <h2 class="step-q">What type of project?</h2>
               <div class="tiles t3">
-                <button class="tile" onclick="pick(this,'project','Driveway');go(2)" aria-label="Driveway"><span class="tile-ico" aria-hidden="true">🚗</span><span class="tile-lbl">Driveway</span></button>
-                <button class="tile" onclick="pick(this,'project','Patio');go(2)" aria-label="Patio"><span class="tile-ico" aria-hidden="true">☀️</span><span class="tile-lbl">Patio</span></button>
-                <button class="tile" onclick="pick(this,'project','Pathway');go(2)" aria-label="Pathway"><span class="tile-ico" aria-hidden="true">🌿</span><span class="tile-lbl">Pathway</span></button>
+                <button class="tile" onclick="pick(this,'project','Driveway');go(2)" aria-label="Driveway">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                  <span class="tile-lbl">Driveway</span>
+                </button>
+                <button class="tile" onclick="pick(this,'project','Patio');go(2)" aria-label="Patio">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
+                  <span class="tile-lbl">Patio</span>
+                </button>
+                <button class="tile" onclick="pick(this,'project','Pathway');go(2)" aria-label="Pathway">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></span>
+                  <span class="tile-lbl">Pathway</span>
+                </button>
               </div>
             </div>
             <!-- Step 2 -->
@@ -549,10 +577,22 @@ img{max-width:100%;display:block}
               <p class="step-n">Step 2 of 4</p>
               <h2 class="step-q">Preferred surface material?</h2>
               <div class="tiles t4">
-                <button class="tile" onclick="pick(this,'material','Resin Bound');go(3)" aria-label="Resin Bound"><span class="tile-ico" aria-hidden="true">💎</span><span class="tile-lbl">Resin Bound</span></button>
-                <button class="tile" onclick="pick(this,'material','Block Paving');go(3)" aria-label="Block Paving"><span class="tile-ico" aria-hidden="true">🧱</span><span class="tile-lbl">Block Paving</span></button>
-                <button class="tile" onclick="pick(this,'material','Tarmac');go(3)" aria-label="Tarmac"><span class="tile-ico" aria-hidden="true">🏗️</span><span class="tile-lbl">Tarmac</span></button>
-                <button class="tile" onclick="pick(this,'material','Natural Stone');go(3)" aria-label="Natural Stone"><span class="tile-ico" aria-hidden="true">🪨</span><span class="tile-lbl">Natural Stone</span></button>
+                <button class="tile" onclick="pick(this,'material','Resin Bound');go(3)" aria-label="Resin Bound">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.813-1.912a2 2 0 001.272-1.272z"/></svg></span>
+                  <span class="tile-lbl">Resin Bound</span>
+                </button>
+                <button class="tile" onclick="pick(this,'material','Block Paving');go(3)" aria-label="Block Paving">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="4" rx="0.5"/><rect x="2" y="10" width="8" height="4" rx="0.5"/><rect x="12" y="10" width="10" height="4" rx="0.5"/><rect x="2" y="17" width="10" height="4" rx="0.5"/><rect x="14" y="17" width="8" height="4" rx="0.5"/></svg></span>
+                  <span class="tile-lbl">Block Paving</span>
+                </button>
+                <button class="tile" onclick="pick(this,'material','Tarmac');go(3)" aria-label="Tarmac">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+                  <span class="tile-lbl">Tarmac</span>
+                </button>
+                <button class="tile" onclick="pick(this,'material','Natural Stone');go(3)" aria-label="Natural Stone">
+                  <span class="tile-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L8.5 9l4 5.5 2.5-3.5 6 9H3z"/></svg></span>
+                  <span class="tile-lbl">Natural Stone</span>
+                </button>
               </div>
             </div>
             <!-- Step 3 -->
@@ -590,7 +630,7 @@ img{max-width:100%;display:block}
             </div>
             <!-- Success -->
             <div class="form-ok" id="fOk" role="alert" aria-live="polite">
-              <div class="ok-circle" aria-hidden="true">✓</div>
+              <div class="ok-circle" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
               <h3>Survey Requested</h3>
               <p>A member of our team will contact you within <strong>2 hours</strong> to arrange your free, no-obligation site survey.</p>
             </div>
@@ -621,17 +661,23 @@ img{max-width:100%;display:block}
     <p class="body-text reveal rd2">Every project we undertake is held to the same exacting standard — from the initial site survey to the final walkthrough with you.</p>
     <div class="promise-grid">
       <article class="promise-card reveal">
-        <div class="p-icon-wrap"><span class="p-icon" aria-hidden="true">🏅</span></div>
+        <div class="p-icon-wrap">
+          <span class="p-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+        </div>
         <h3>Satisfaction Guaranteed</h3>
         <p>We do not leave a site until the work meets our standards and yours. Our guarantee is unconditional — we stand behind every installation we complete.</p>
       </article>
       <article class="promise-card reveal rd1">
-        <div class="p-icon-wrap"><span class="p-icon" aria-hidden="true">💷</span></div>
+        <div class="p-icon-wrap">
+          <span class="p-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+        </div>
         <h3>Transparent Pricing</h3>
         <p>Detailed, itemised quotations with zero hidden charges. You will always know exactly what you are paying for before a single stone is laid.</p>
       </article>
       <article class="promise-card reveal rd2">
-        <div class="p-icon-wrap"><span class="p-icon" aria-hidden="true">🛠️</span></div>
+        <div class="p-icon-wrap">
+          <span class="p-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
+        </div>
         <h3>Precision Craftsmanship</h3>
         <p>Our fully trained, time-served teams use only premium materials from trusted UK suppliers. Quality is not a selling point for us — it is a minimum requirement.</p>
       </article>
@@ -727,28 +773,36 @@ img{max-width:100%;display:block}
     <h2 id="why-h2" class="h2 reveal rd1" style="max-width:500px;margin-bottom:44px">An Established Business You Can Rely On</h2>
     <div class="why-grid">
       <article class="why-card reveal">
-        <div class="why-ico" aria-hidden="true">🏆</div>
+        <div class="why-ico" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
         <div>
           <h3>25 Years of Proven Expertise</h3>
           <p>Not a franchise, not a start-up. PD Groundworks &amp; Resin has been delivering quality paving across England since 2001. Our track record speaks for itself.</p>
         </div>
       </article>
       <article class="why-card reveal rd1">
-        <div class="why-ico" aria-hidden="true">💳</div>
+        <div class="why-ico" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
         <div>
           <h3>0% Interest-Free Finance</h3>
           <p>Invest in your property without the financial strain. We offer approved interest-free finance options so you can spread the cost and get started sooner.</p>
         </div>
       </article>
       <article class="why-card reveal rd2">
-        <div class="why-ico" aria-hidden="true">🛡️</div>
+        <div class="why-ico" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
         <div>
           <h3>Fully Licensed &amp; Insured</h3>
           <p>Every installation is protected by comprehensive public liability insurance and a written workmanship guarantee. You have complete peace of mind from day one.</p>
         </div>
       </article>
       <article class="why-card reveal">
-        <div class="why-ico" aria-hidden="true">👨‍👩‍👧</div>
+        <div class="why-ico" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
         <div>
           <h3>Family Business, Personal Service</h3>
           <p>When you contact us, you speak to people who care about the outcome of your project. No call centres, no faceless contractors — genuine, personal service.</p>
@@ -806,27 +860,27 @@ img{max-width:100%;display:block}
     <p class="accred-label">Our Accreditations &amp; Memberships</p>
     <div class="accred-row">
       <div class="accred-badge reveal">
-        <span class="accred-ico" aria-hidden="true">⭐</span>
+        <span class="accred-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
         <span class="accred-name">Trustpilot</span>
         <span class="accred-sub">4.9 / 5 Rating</span>
       </div>
       <div class="accred-badge reveal rd1">
-        <span class="accred-ico" aria-hidden="true">🏗️</span>
+        <span class="accred-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="12" x2="9" y2="12.01"/><line x1="9" y1="15" x2="9" y2="15.01"/></svg></span>
         <span class="accred-name">FMB Member</span>
         <span class="accred-sub">Federation of Master Builders</span>
       </div>
       <div class="accred-badge reveal rd2">
-        <span class="accred-ico" aria-hidden="true">✅</span>
+        <span class="accred-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
         <span class="accred-name">CHAS Certified</span>
         <span class="accred-sub">Health &amp; Safety Accredited</span>
       </div>
       <div class="accred-badge reveal rd3">
-        <span class="accred-ico" aria-hidden="true">💧</span>
+        <span class="accred-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></span>
         <span class="accred-name">SuDS Compliant</span>
         <span class="accred-sub">Sustainable Drainage</span>
       </div>
       <div class="accred-badge reveal rd4">
-        <span class="accred-ico" aria-hidden="true">🛡️</span>
+        <span class="accred-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
         <span class="accred-name">Fully Insured</span>
         <span class="accred-sub">Public Liability Cover</span>
       </div>
@@ -850,23 +904,23 @@ img{max-width:100%;display:block}
       </div>
       <div class="faq-list">
         <div class="faq-item reveal">
-          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">Is resin bound more expensive than block paving or tarmac?<div class="faq-ico" aria-hidden="true">+</div></div>
+          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">Is resin bound more expensive than block paving or tarmac?<div class="faq-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
           <div class="faq-ans"><div class="faq-ans-body">Not necessarily. Where we can apply an overlay system to your existing surface, resin can be more cost-effective than a full dig-out and relay. We assess every site individually and provide a clear, honest comparison during your free survey.</div></div>
         </div>
         <div class="faq-item reveal rd1">
-          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">How long does installation typically take?<div class="faq-ico" aria-hidden="true">+</div></div>
+          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">How long does installation typically take?<div class="faq-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
           <div class="faq-ans"><div class="faq-ans-body">Most residential driveways are completed within 1–3 days depending on size and complexity. Patios and pathways are often finished within a single day. We provide a precise programme during your quotation so you can plan accordingly.</div></div>
         </div>
         <div class="faq-item reveal rd2">
-          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">Do I need to prepare anything before the installation?<div class="faq-ico" aria-hidden="true">+</div></div>
+          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">Do I need to prepare anything before the installation?<div class="faq-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
           <div class="faq-ans"><div class="faq-ans-body">Very little is required from you. Simply clear the area of pots, furniture and personal items. We handle all groundwork, preparation and clean-up. We will need access to water and electricity on the day — your project manager will confirm all details in advance.</div></div>
         </div>
         <div class="faq-item reveal">
-          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">Can resin be laid over existing block paving or flagstones?<div class="faq-ico" aria-hidden="true">+</div></div>
+          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">Can resin be laid over existing block paving or flagstones?<div class="faq-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
           <div class="faq-ans"><div class="faq-ans-body">No. Resin bound surfacing must be laid over a solid, stable, properly prepared base to carry our workmanship guarantee. Installing over block paving or flags risks surface failure over time, and the outline of the flags may become visible. We assess your base at the free survey stage.</div></div>
         </div>
         <div class="faq-item reveal rd1">
-          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">What guarantee do you provide?<div class="faq-ico" aria-hidden="true">+</div></div>
+          <div class="faq-q" onclick="faqToggle(this)" role="button" tabindex="0" aria-expanded="false">What guarantee do you provide?<div class="faq-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
           <div class="faq-ans"><div class="faq-ans-body">All installations carry a written workmanship guarantee. We use only premium materials from established UK suppliers, and our team is trained to the highest industry standards. Full documentation is provided at handover.</div></div>
         </div>
       </div>
@@ -883,23 +937,23 @@ img{max-width:100%;display:block}
         <h2 id="areas-h2" class="h2 reveal rd1">Serving the Whole of England</h2>
         <p class="reveal rd2" style="font-size:.9rem;color:var(--text-2);line-height:1.75">From London to Leeds, Birmingham to Bristol — our experienced teams operate across England, bringing the same standard of workmanship to every county.</p>
         <div class="city-grid reveal" aria-label="Areas we serve">
-          <span class="city-tag">📍 London</span>
-          <span class="city-tag">📍 Manchester</span>
-          <span class="city-tag">📍 Birmingham</span>
-          <span class="city-tag">📍 Leeds</span>
-          <span class="city-tag">📍 Sheffield</span>
-          <span class="city-tag">📍 Bristol</span>
-          <span class="city-tag">📍 Liverpool</span>
-          <span class="city-tag">📍 Leicester</span>
-          <span class="city-tag">📍 Nottingham</span>
-          <span class="city-tag">📍 Newcastle</span>
-          <span class="city-tag">📍 Southampton</span>
-          <span class="city-tag">📍 Derby</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>London</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Manchester</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Birmingham</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Leeds</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Sheffield</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Bristol</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Liverpool</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Leicester</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Nottingham</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Newcastle</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Southampton</span>
+          <span class="city-tag"><span class="city-dot" aria-hidden="true"></span>Derby</span>
         </div>
       </div>
       <div class="map-wrap reveal rd1">
         <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/bU4hxwzSTLq91STls6Sp/media/680b6deaf8c188e58db6051f.png"
-             alt="Map of England showing PD Groundworks & Resin service coverage">
+             alt="Map of England showing PD Groundworks &amp; Resin service coverage">
         <div class="map-caption"><p>Full England Coverage</p></div>
       </div>
     </div>
@@ -929,10 +983,10 @@ img{max-width:100%;display:block}
         </a>
         <p class="footer-desc">England's premier resin bound and paving specialists. Delivering precision driveways, patios and pathways to homeowners across England since 2001.</p>
         <div class="footer-creds">
-          <span class="footer-cred"><span class="footer-cred-ico" aria-hidden="true">🛡️</span>Fully Licensed &amp; Insured</span>
-          <span class="footer-cred"><span class="footer-cred-ico" aria-hidden="true">🏆</span>Est. 2001</span>
-          <span class="footer-cred"><span class="footer-cred-ico" aria-hidden="true">👨‍👩‍👧</span>Family Run</span>
-          <span class="footer-cred"><span class="footer-cred-ico" aria-hidden="true">💳</span>0% Finance</span>
+          <span class="footer-cred"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>Fully Licensed &amp; Insured</span>
+          <span class="footer-cred"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Est. 2001</span>
+          <span class="footer-cred"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Family Run</span>
+          <span class="footer-cred"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>0% Finance</span>
         </div>
       </div>
       <div>
@@ -948,21 +1002,21 @@ img{max-width:100%;display:block}
       <div>
         <p class="ft-col-title">Get in Touch</p>
         <div class="ft-contact-item">
-          <span class="ft-contact-ico" aria-hidden="true">📞</span>
+          <span class="ft-contact-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
           <div class="ft-contact-txt">
             <strong><a href="tel:08001931101" style="color:inherit">0800 193 1101</a></strong>
             Mon–Fri 8am–6pm, Sat 9am–4pm
           </div>
         </div>
         <div class="ft-contact-item">
-          <span class="ft-contact-ico" aria-hidden="true">✉️</span>
+          <span class="ft-contact-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,6.5 12,13 22,6.5"/></svg></span>
           <div class="ft-contact-txt">
             <strong><a href="mailto:info@pdgr.co.uk" style="color:inherit">info@pdgr.co.uk</a></strong>
             We respond within 2 hours
           </div>
         </div>
         <div class="ft-contact-item">
-          <span class="ft-contact-ico" aria-hidden="true">📍</span>
+          <span class="ft-contact-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <div class="ft-contact-txt">
             <strong>Head Office</strong>
             The Chambers, Halifax Road,<br>Hipperholme, Halifax, HX3 8EN
@@ -973,9 +1027,8 @@ img{max-width:100%;display:block}
     <div class="footer-bot">
       <p class="footer-copy">© 2026 PD Groundworks &amp; Resin Ltd. Registered in England &amp; Wales No. 12856780. Authorised &amp; regulated by the FCA (FRN: 1018815).</p>
       <nav class="footer-legal" aria-label="Legal links">
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms">Terms of Service</a>
-        <a href="/sitemap">Sitemap</a>
+        <a href="https://pdgr.co.uk/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://pdgr.co.uk/terms-and-conditions" target="_blank" rel="noopener">Terms of Service</a>
       </nav>
     </div>
   </div>
@@ -983,7 +1036,10 @@ img{max-width:100%;display:block}
 
 <!-- MOBILE STICKY CTA -->
 <div class="mobile-sticky-cta" aria-label="Quick contact">
-  <a href="tel:08001931101" class="mobile-sticky-phone">📞 0800 193 1101</a>
+  <a href="tel:08001931101" class="mobile-sticky-phone">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    0800 193 1101
+  </a>
   <a href="#quote" class="btn btn-primary">Get Free Survey</a>
 </div>
 
