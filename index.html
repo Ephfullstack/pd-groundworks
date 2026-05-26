@@ -1195,6 +1195,19 @@ if (quoteEl && stickyCta) {
   stickyObs.observe(quoteEl);
 }
 
+/* ============================================================ WEBHOOK */
+const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/2HnpXNnMWcQzBHbgOWOx/webhook-trigger/75c12a59-b1b7-48ee-ac52-7d52a721ee6d';
+
+function sendLead(data) {
+  fetch(WEBHOOK, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  })
+  .catch(() => {}) /* always redirect even if webhook fails */
+  .finally(() => { window.location.href = '/thank-you'; });
+}
+
 /* ============================================================ FORM */
 const fd = {project:'',material:'',address:'',name:'',phone:'',email:''};
 let cur = 1;
@@ -1240,8 +1253,8 @@ function valStep3() {
 function submitForm() {
   let ok = true;
   const checks = [
-    ['f-name',  v => v.length > 0,                       'e-name'],
-    ['f-phone', v => /^[\d\s\+\-\(\)]{10,}$/.test(v),   'e-phone'],
+    ['f-name',  v => v.length > 0,                          'e-name'],
+    ['f-phone', v => /^[\d\s\+\-\(\)]{10,}$/.test(v),      'e-phone'],
     ['f-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), 'e-email'],
   ];
   checks.forEach(([id, test, errId]) => {
@@ -1252,7 +1265,15 @@ function submitForm() {
     else { el.classList.remove('err'); err.classList.remove('show'); fd[id.replace('f-','')] = v; }
   });
   if (!ok) return;
-  window.location.href = '/thank-you';
+  sendLead({
+    firstName: fd.name,
+    phone:     fd.phone,
+    email:     fd.email,
+    address:   fd.address,
+    project:   fd.project,
+    material:  fd.material,
+    source:    'Hero Form'
+  });
 }
 
 /* ============================================================ HEADER SCROLL */
@@ -1350,7 +1371,15 @@ function msubmit() {
     else { el.classList.remove('err'); err.classList.remove('show'); }
   });
   if (!ok) return;
-  window.location.href = '/thank-you';
+  sendLead({
+    firstName: document.getElementById('mf-name').value.trim(),
+    phone:     document.getElementById('mf-phone').value.trim(),
+    email:     document.getElementById('mf-email').value.trim(),
+    address:   mfd.maddress,
+    project:   mfd.mproject,
+    material:  mfd.mmaterial,
+    source:    'Popup Form'
+  });
 }
 
 /* Show modal on every page load after short delay */
