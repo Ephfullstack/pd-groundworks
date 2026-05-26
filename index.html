@@ -1252,10 +1252,7 @@ function submitForm() {
     else { el.classList.remove('err'); err.classList.remove('show'); fd[id.replace('f-','')] = v; }
   });
   if (!ok) return;
-  document.getElementById('step4').style.display = 'none';
-  document.getElementById('fOk').classList.add('show');
-  for (let i = 1; i <= 4; i++) { const d = document.getElementById('sd'+i); d.classList.remove('active'); d.classList.add('done'); }
-  for (let i = 1; i <= 3; i++) document.getElementById('sl'+i).classList.add('done');
+  window.location.href = '/thank-you';
 }
 
 /* ============================================================ HEADER SCROLL */
@@ -1353,10 +1350,7 @@ function msubmit() {
     else { el.classList.remove('err'); err.classList.remove('show'); }
   });
   if (!ok) return;
-  document.getElementById('ms4').style.display = 'none';
-  document.getElementById('mOk').classList.add('show');
-  document.querySelector('.modal-footer-note').style.display = 'none';
-  for (let i = 1; i <= 4; i++) { const d = document.getElementById('msd'+i); d.classList.remove('active'); d.classList.add('done'); }
+  window.location.href = '/thank-you';
 }
 
 /* Show modal on every page load after short delay */
