@@ -565,9 +565,9 @@ img{max-width:100%;display:block}
         <p class="modal-step-n">Step 4 of 4</p>
         <p class="modal-step-q">How should we reach you?</p>
         <div class="fld">
-          <label for="mf-name">First Name</label>
-          <input type="text" id="mf-name" placeholder="Your first name" autocomplete="given-name">
-          <span class="errmsg" id="me-name">Please enter your first name.</span>
+          <label for="mf-name">Full Name</label>
+          <input type="text" id="mf-name" placeholder="Your full name" autocomplete="name">
+          <span class="errmsg" id="me-name">Please enter your full name.</span>
         </div>
         <div class="fld">
           <label for="mf-phone">Phone Number</label>
@@ -751,8 +751,8 @@ img{max-width:100%;display:block}
               <p class="step-n">Step 4 of 4</p>
               <h2 class="step-q">How should we reach you?</h2>
               <div class="fld">
-                <label for="f-name">First Name</label>
-                <input type="text" id="f-name" placeholder="Your first name" autocomplete="given-name">
+                <label for="f-name">Full Name</label>
+                <input type="text" id="f-name" placeholder="Your full name" autocomplete="name">
                 <span class="errmsg" id="e-name">Please enter your first name.</span>
               </div>
               <div class="fld">
@@ -1266,7 +1266,7 @@ function submitForm() {
   });
   if (!ok) return;
   sendLead({
-    firstName: fd.name,
+    fullName:  fd.name,
     phone:     fd.phone,
     email:     fd.email,
     address:   fd.address,
@@ -1372,7 +1372,7 @@ function msubmit() {
   });
   if (!ok) return;
   sendLead({
-    firstName: document.getElementById('mf-name').value.trim(),
+    fullName:  document.getElementById('mf-name').value.trim(),
     phone:     document.getElementById('mf-phone').value.trim(),
     email:     document.getElementById('mf-email').value.trim(),
     address:   mfd.maddress,
