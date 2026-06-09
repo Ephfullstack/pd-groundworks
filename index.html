@@ -1199,13 +1199,27 @@ if (quoteEl && stickyCta) {
 const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/2HnpXNnMWcQzBHbgOWOx/webhook-trigger/75c12a59-b1b7-48ee-ac52-7d52a721ee6d';
 
 function sendLead(data) {
+  document.querySelectorAll('.form-btn').forEach(b => {
+    b.disabled = true;
+    b.dataset.origText = b.textContent;
+    b.textContent = 'Submitting…';
+  });
+
   fetch(WEBHOOK, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data)
   })
-  .catch(() => {}) /* always redirect even if webhook fails */
-  .finally(() => { window.location.href = '/thank-you'; });
+  .then(res => {
+    if (!res.ok) {
+      console.error('Webhook error:', res.status, res.statusText);
+    }
+    window.location.href = '/thank-you';
+  })
+  .catch(err => {
+    console.error('Webhook failed:', err);
+    window.location.href = '/thank-you';
+  });
 }
 
 /* ============================================================ FORM */
@@ -1382,8 +1396,7 @@ function msubmit() {
   });
 }
 
-/* Show modal on every page load after short delay */
-setTimeout(openModal, 2500);
+
 </script>
 </body>
 </html>
