@@ -14,6 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+<link rel="dns-prefetch" href="https://images.leadconnectorhq.com">
+<link rel="preconnect" href="https://images.leadconnectorhq.com" crossorigin>
+<link rel="preload" as="image" href="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/bU4hxwzSTLq91STls6Sp/media/680b59114af0d9d9a9ef16b8.jpeg" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"PD Groundworks & Resin Ltd","description":"England's premier resin bound driveway and paving specialists. Serving homeowners across England for over 25 years.","url":"https://pd-groundworks.vercel.app","telephone":"08001931101","email":"info@pdgr.co.uk","address":{"@type":"PostalAddress","streetAddress":"The Chambers, Halifax Road, Hipperholme","addressLocality":"Halifax","addressRegion":"West Yorkshire","postalCode":"HX3 8EN","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"England"},"foundingDate":"2001","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"500","bestRating":"5"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Paving & Groundworks Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Resin Bound Driveways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Block Paving"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Tarmac Driveways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Patios & Pathways"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Groundworks & Landscaping"}}]}}
 </script>
@@ -91,7 +94,7 @@ img{max-width:100%;display:block}
 .header .btn{padding:10px 20px;font-size:.8rem}
 
 /* ============================================================ HERO */
-.hero{position:relative;min-height:calc(100vh - 90px);display:flex;align-items:center;padding:72px 0 80px;overflow:hidden}
+.hero{position:relative;min-height:calc(100vh - 90px);min-height:calc(100svh - 90px);display:flex;align-items:center;padding:72px 0 80px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:
   radial-gradient(ellipse at 68% 28%,rgba(20,144,212,.1) 0%,transparent 48%),
   radial-gradient(ellipse at 8% 78%,rgba(20,144,212,.06) 0%,transparent 42%),
@@ -279,7 +282,7 @@ img{max-width:100%;display:block}
 .faq-item.open .faq-ico{background:var(--blue);border-color:var(--blue);color:#fff;transform:rotate(45deg)}
 .faq-ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
 .faq-ans-body{padding-bottom:16px;font-size:.865rem;color:var(--text-2);line-height:1.76}
-.faq-item.open .faq-ans{max-height:220px}
+.faq-item.open .faq-ans{max-height:400px}
 
 /* ============================================================ AREAS */
 .areas{padding:var(--pad) 0;background:#fff}
@@ -477,6 +480,28 @@ img{max-width:100%;display:block}
 @media(min-width:641px){
   .mobile-sticky-cta{display:none}
 }
+
+/* Performance hints */
+.svc-bg{will-change:transform}
+button,.tile,.btn,.form-btn,.faq-q{touch-action:manipulation}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+
+/* Mobile modal — bottom sheet */
+@media(max-width:640px){
+  .modal-overlay{align-items:flex-end;padding:0}
+  .modal-box{border-radius:20px 20px 0 0;max-width:100%;max-height:90vh;max-height:90svh;overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateY(100%) scale(1)}
+  .modal-overlay.open .modal-box{transform:translateY(0) scale(1)}
+  .modal-hero{padding:20px 22px 14px}
+  .modal-hero h2{font-size:1.2rem}
+  .modal-body{padding:16px 20px 28px}
+  .modal-track{margin-bottom:14px}
+  .consent,.modal-footer-note{font-size:.7rem}
+}
 </style>
 </head>
 <body>
@@ -626,7 +651,7 @@ img{max-width:100%;display:block}
     <div class="header-inner">
       <a href="#" aria-label="PD Groundworks &amp; Resin Ltd — Home">
         <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/bU4hxwzSTLq91STls6Sp/media/680b59113ea3968dbef5a47d.png"
-             alt="PD Groundworks &amp; Resin Ltd" class="header-logo">
+             alt="PD Groundworks &amp; Resin Ltd" class="header-logo" fetchpriority="high" decoding="async">
       </a>
       <div class="header-right">
         <div class="header-phone-wrap">
@@ -1093,7 +1118,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="map-wrap reveal rd1">
         <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/bU4hxwzSTLq91STls6Sp/media/680b6deaf8c188e58db6051f.png"
-             alt="Map of England showing PD Groundworks &amp; Resin service coverage">
+             alt="Map of England showing PD Groundworks &amp; Resin service coverage" loading="lazy" decoding="async">
         <div class="map-caption"><p>Full England Coverage</p></div>
       </div>
     </div>
@@ -1119,7 +1144,7 @@ img{max-width:100%;display:block}
       <div>
         <a href="#" aria-label="PD Groundworks &amp; Resin Ltd">
           <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/bU4hxwzSTLq91STls6Sp/media/680b59113ea3968dbef5a47d.png"
-               alt="PD Groundworks &amp; Resin Ltd" class="footer-logo">
+               alt="PD Groundworks &amp; Resin Ltd" class="footer-logo" loading="lazy" decoding="async">
         </a>
         <p class="footer-desc">England's premier resin bound and paving specialists. Delivering precision driveways, patios and pathways to homeowners across England since 2001.</p>
         <div class="footer-creds">
